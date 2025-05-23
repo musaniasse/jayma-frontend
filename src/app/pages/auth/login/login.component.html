@@ -1,0 +1,27 @@
+<div class="body">
+  <section>
+    <form (submit)="login()" [formGroup]="loginFormGroup">
+      <h1>Se connecter</h1>
+      <div class="inputbox">
+        <ion-icon name="mail-outline"> </ion-icon>
+        <input type="email" name="email" formControlName="email" required>
+        <label>Votre email</label>
+      </div>
+      <!--@if (email.invalid && (email.dirty || email["touched"])){
+        <div class="error">This field is invalid</div>
+      }-->
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"> </ion-icon>
+        <input type="password" name="password" formControlName="password" required>
+        <label>Votre mot passe</label>
+      </div>
+      <button type="submit">Sign in</button>
+      <div class="register">
+        <p>Vous n'avez pas encore de compte ? <a routerLink="/register">S'inscrire</a></p>
+      </div>
+    </form>
+    @if (invalidCredentials){
+      <div class="error">Veuillez remplir les champs obligatoires</div>
+    }
+  </section>
+</div>
