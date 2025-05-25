@@ -1,9 +1,9 @@
 import {Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnDestroy} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
-import {ICredentials, LoginService} from '../../../core/service/login.service';
+import {ICredentials, LoginService} from '@core/service/login.service';
 import {Router, RouterLink} from '@angular/router';
 import {Subscription} from 'rxjs';
-import {User} from '../../../core/model/user.model';
+import {User} from '@core/model/user.model';
 
 @Component({
   selector: 'app-login',

@@ -4,7 +4,7 @@ import {User} from '../model/user.model';
 import {map, Observable, tap} from 'rxjs';
 
 export interface ICredentials {
-  username: string;
+  name: string;
   password: string;
 }
 
@@ -22,12 +22,15 @@ export class LoginService {
     return this.http.post(this.BASE_URL + '/auth/login', credentials).pipe(
       tap((res :any)=> {
         localStorage.setItem('token', res['token']);
-        //const user = Object.assign(new User(), res['user']);
-        //this.$user.set(user);
-      })/*,
+        const user = Object.assign(new User(), res['user']);
+        this.$user.set(user);
+        if(this.$user())
+          localStorage.setItem('user', JSON.stringify(this.$user()));
+
+      }),
       map((res :any)=> {
         return this.$user();
-      })*/
+      })
     )
   }
 

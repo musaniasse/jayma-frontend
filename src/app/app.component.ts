@@ -3,7 +3,7 @@ import {Router, RouterOutlet} from '@angular/router';
 import {MatToolbar} from '@angular/material/toolbar';
 import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
-import {LoginService} from './core/service/login.service';
+import {LoginService} from '@core/service/login.service';
 import {Subscription} from 'rxjs';
 
 @Component({
